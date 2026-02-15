@@ -1,0 +1,41 @@
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+.page{
+  padding: 100px 0;
+}
+
+.content-wrap{
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.search-wrap{
+  max-width: 760px;
+}
+
+.search-input{
+  border: 2px solid #111;
+  border-radius: 0;
+}
+
+.season-btn{
+  border: 0;
+  padding: 16px 46px;
+  /* font-weight: 500; */
+  min-width: 150px;
+}
+
+.spring{ background: #fbf3c6; }
+.summer{ background: #e9f7dc; }
+.fall{ background: #f7d8b9; }
+.winter{ background: #cfe6fb; }
+
+.filter-btn{
+  background: #ff6f6f;
+  border: 0;
+  border-radius: 0;
+  padding: 14px 22px;
+  font-weight: 500;
+}
