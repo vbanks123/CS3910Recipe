@@ -1,44 +1,52 @@
+/* Reset default browser styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Base body styles */
 body {
   font-family: Arial, sans-serif;
   line-height: 1.6;
 }
 
+/* Main container - splits page into two columns */
 .container {
   display: flex;
   min-height: 100vh;
 }
 
+/* Left column - contains recipe content */
 .content-side {
   width: 50%;
   padding: 40px;
-  overflow-y: auto;
+  overflow-y: auto; /* Allows scrolling for long content */
 }
 
+/* Right column - fixed image that stays visible while scrolling */
 .image-side {
   width: 50%;
-  position: sticky;
+  position: sticky; /* Keeps image fixed in viewport */
   top: 0;
   height: 100vh;
 }
 
+/* Recipe image styling - fills entire right column */
 .image-side img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: cover; /* Crops image to fill space without distortion */
 }
 
+/* Main page title */
 h1 {
   font-size: 2.5em;
   margin-bottom: 20px;
   color: #333;
 }
 
+/* Section headings (Ingredients, Instructions, Location) */
 h2 {
   font-size: 1.8em;
   margin-top: 30px;
@@ -46,73 +54,87 @@ h2 {
   color: #444;
 }
 
+/* Paragraph text styling */
 p {
   margin-bottom: 20px;
   color: #666;
 }
 
+/* Lists styling (ingredients and instructions) */
 ul, ol {
   margin-left: 20px;
   margin-bottom: 20px;
 }
 
+/* Individual list items */
 li {
   margin-bottom: 10px;
   color: #555;
 }
 
+/* Location section wrapper */
 .location-section {
   margin-top: 30px;
 }
 
+/* Location content - arranges address and map side by side */
 .location-content {
   display: flex;
   gap: 20px;
   align-items: flex-start;
-  margin-top: 15px;
 }
 
+/* Location text/address container */
 .location-info {
-  flex: 1;
+  flex: 1; /* Takes up equal space with map */
 }
 
+/* Location pin icon and address wrapper */
 .location-details {
   display: flex;
   align-items: center;
   gap: 10px;
 }
 
+/* Location pin icon sizing */
 .location-details img {
   width: 30px !important;
   height: 30px !important;
-  object-fit: contain;
+  object-fit: contain; /* Maintains icon aspect ratio */
 }
 
+/* Remove margin from address text */
 .location-details p {
   margin: 0;
 }
 
+/* Map image container */
 .location-map {
-  flex: 1;
+  flex: 1; /* Takes up equal space with location info */
 }
 
+/* Map image styling */
 .location-map img {
   width: 100%;
   height: auto;
   max-width: 300px;
-  border-radius: 8px;
+  border-radius: 8px; /* Rounded corners */
 }
 
+/* Responsive design for tablets and mobile devices */
 @media (max-width: 968px) {
+  /* Stack columns vertically on smaller screens */
   .container {
     flex-direction: column;
   }
   
+  /* Make both columns full width */
   .content-side,
   .image-side {
     width: 100%;
   }
   
+  /* Change image to static positioning with fixed height */
   .image-side {
     position: relative;
     height: 400px;
