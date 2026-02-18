@@ -1,41 +1,43 @@
-// Season mapping based on ZIP code first digit
-const zipToSeason = {
-  9: 'summer',
-  8: 'summer',
-  7: 'summer',
-  6: 'fall',
-  5: 'fall',
-  4: 'fall',
-  3: 'spring',
-  2: 'spring',
-  1: 'winter',
-  0: 'winter'
+// Season and region mapping based on ZIP code first digit
+const zipToRegion = {
+  9: { season: 'summer', region: 'West Coast' },
+  8: { season: 'summer', region: 'Mountain/Rockies' },
+  7: { season: 'summer', region: 'South Central' },
+  6: { season: 'fall', region: 'Great Lakes/Ohio Valley' },
+  5: { season: 'fall', region: 'Upper Midwest' },
+  4: { season: 'fall', region: 'Mid-Atlantic' },
+  3: { season: 'spring', region: 'Southeast' },
+  2: { season: 'spring', region: 'Mid-Atlantic/DC' },
+  1: { season: 'winter', region: 'Northeast' },
+  0: { season: 'winter', region: 'Northeast' }
 };
 
-// Get season from zip code
-function getSeasonFromZipCode(zipCode) {
+// Get season and region from zip code
+function getRegionFromZipCode(zipCode) {
   // Validate zip code
   if (!zipCode || zipCode.length < 5) {
     return null;
   }
   
   const firstDigit = parseInt(zipCode.toString()[0]);
-  return zipToSeason[firstDigit] || null;
+  return zipToRegion[firstDigit] || null;
 }
 
-// Example: Handle search form submission
+// Handle search form submission
 function handleZipSearch(event) {
   event.preventDefault();
   
   const zipInput = document.getElementById('zip-search').value;
-  const season = getSeasonFromZipCode(zipInput);
+  const info = getRegionFromZipCode(zipInput);
   
-  if (season) {
-    console.log(`Season: ${season}`);
+  if (info) {
+    console.log(`Season: ${info.season}`);
+    console.log(`Region: ${info.region}`);
     // Here you could:
+    // - Display the region map image
     // - Filter recipes by season
-    // - Redirect to seasonal recipe page
-    // - Update the UI to show seasonal recipes
+    // - Show "This is a ${info.season} recipe from the ${info.region} region"
+    // - Update the location section with the region map
     // - Make an API call to fetch seasonal recipes
   } else {
     console.log('Invalid zip code');
