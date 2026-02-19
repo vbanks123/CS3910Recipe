@@ -1,5 +1,12 @@
+
+  /* HOME PAGE */
+  /* HOME PAGE */
+  /* HOME PAGE */
+
+
 body {
   font-family: 'Poppins', sans-serif;
+  line-height: 1.6;
 }
 
 .page{
@@ -38,4 +45,126 @@ body {
   border-radius: 0;
   padding: 14px 22px;
   font-weight: 500;
+}
+
+
+  /* RECIPE PAGE */
+  /* RECIPE PAGE */
+  /* RECIPE PAGE */
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.content-side {
+  width: 50%;
+  padding: 40px;
+  overflow-y: auto;
+}
+
+.image-side {
+  width: 50%;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+
+.image-side img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+h2 {
+  font-size: 1.8em;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  color: #444;
+}
+
+p {
+  margin-bottom: 20px;
+  color: #666;
+}
+
+ul, ol {
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+li {
+  margin-bottom: 10px;
+  color: #555;
+}
+
+.location-section {
+  margin-top: 30px;
+}
+
+.location-content {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  margin-top: 15px;
+}
+
+.location-info {
+  flex: 1;
+}
+
+.location-details {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.location-details img {
+  width: 30px !important;
+  height: 30px !important;
+  object-fit: contain;
+}
+
+.location-details p {
+  margin: 0;
+}
+
+.location-map {
+  flex: 1;
+}
+
+.location-map img {
+  width: 100%;
+  height: auto;
+  max-width: 300px;
+  border-radius: 8px;
+}
+
+@media (max-width: 968px) {
+  .container {
+    flex-direction: column;
+  }
+  
+  .content-side,
+  .image-side {
+    width: 100%;
+  }
+  
+  .image-side {
+    position: relative;
+    height: 400px;
+  }
 }
