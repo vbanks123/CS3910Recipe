@@ -173,3 +173,6 @@ console.log('Safe recipes:', results.map(r => r.name));
 // Expected output: ["Winter Veggie Stew"]
 // "Creamy Mushroom Pasta" excluded — dairy (butter, cream, parmesan cheese)
 // "Avocado Toast" skipped — wrong region
+
+//  to track if it's logging (VB)
+console.log("AllergyFilter.js connected successfully");

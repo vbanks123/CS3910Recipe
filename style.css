@@ -168,3 +168,85 @@ li {
     height: 400px;
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+/* test */
+
+/* RECIPE (NEW) */
+
+
+.recipe-hero img{
+  width: 100%;
+  height: 360px;
+  object-fit: cover;
+  border-radius: 10px;
+  border: 2px solid #111;
+}
+
+.recipe-card{
+  border: 2px solid #111;
+  border-radius: 10px;
+  background: #fff;
+}
+
+.recipe-badge{
+  font-weight: 500;
+  border-radius: 999px;
+  padding: 10px 12px;
+}
+
+.recipe-list{
+  padding-left: 18px;
+  margin-bottom: 0;
+}
+
+.recipe-steps{
+  padding-left: 18px;
+  margin-bottom: 0;
+}
+
+.recipe-map{
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  border-radius: 10px;
+  border: 2px solid #111;
+}
+
+
+/* TAGS that match Home button colors */
+
+.tag{
+  display: inline-flex;
+  align-items: center;
+  border: 2px solid #111;
+  border-radius: 999px;
+  padding: 8px 12px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  line-height: 1;
+}
+
+
+/* allergy tags — match Filter button color */
+.tag-allergy{
+  background: #ff6f6f; /* same as .filter-btn */
+}
+
+/* season tags — reuse your existing season classes:
+   .spring .summer .fall .winter already set backgrounds
+   so we just make sure they look like tags */
+
+.tag-season{
+  /* nothing needed here, but keeps intent clear */
+}
