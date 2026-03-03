@@ -123,56 +123,11 @@ function filterRecipesByAllergens(recipes, apiLocation, selectedAllergies) {
   return safeRecipes;
 }
 
+
 // ------------------------------------------------------------
-// EXAMPLE USAGE
-// In production, handleZipSearch() in ZipCodeSearch.js will
-// call this function automatically after fetching recipes.
-// The call will look like this:
-//
-//   const safeRecipes = filterRecipesByAllergens(
-//     apiResponse.recipes,
-//     apiResponse.location,
-//     userSelectedAllergies
-//   );
-//
-// For now, here is a manual example using mock data:
+// Export helpers to the browser global so other scripts can use them
 // ------------------------------------------------------------
-const mockApiResponse = {
-  location: { region: 'Northeast', season: 'winter' },
-  recipes: [
-    {
-      name: 'Creamy Mushroom Pasta',
-      region: 'Northeast',
-      season: 'winter',
-      pageText: 'Ingredients: pasta, butter, cream, mushrooms, garlic, parmesan cheese.'
-    },
-    {
-      name: 'Winter Veggie Stew',
-      region: 'Northeast',
-      season: 'winter',
-      pageText: 'Ingredients: potatoes, carrots, celery, vegetable broth, olive oil, thyme.'
-    },
-    {
-      name: 'Avocado Toast',
-      region: 'West Coast',
-      season: 'summer',
-      pageText: 'Ingredients: sourdough bread, avocado, lemon juice, olive oil, chili flakes.'
-    }
-  ]
-};
+window.scanForAllergens = scanForAllergens;
+window.filterRecipesByAllergens = filterRecipesByAllergens;
 
-const userAllergies = ['dairy', 'gluten'];
-
-const results = filterRecipesByAllergens(
-  mockApiResponse.recipes,
-  mockApiResponse.location,
-  userAllergies
-);
-
-console.log('Safe recipes:', results.map(r => r.name));
-// Expected output: ["Winter Veggie Stew"]
-// "Creamy Mushroom Pasta" excluded — dairy (butter, cream, parmesan cheese)
-// "Avocado Toast" skipped — wrong region
-
-//  to track if it's logging (VB)
-console.log("AllergyFilter.js connected successfully");
+console.log("AllergyFilter.js loaded");
